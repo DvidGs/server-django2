@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from allauth.account.views import ConfirmEmailView
+from rest_framework import routers
+from panel.views import GeeksViewSet, GeeksViewSet2, GeeksViewSet3, GeeksViewSet4, GeeksViewSet5, GeeksViewSet6
 
+router = routers.DefaultRouter()
+router.register(r'a1', GeeksViewSet)
+router.register(r'a2', GeeksViewSet2)
+router.register(r'a3', GeeksViewSet3)
+router.register(r'a4', GeeksViewSet4)
+router.register(r'a5', GeeksViewSet5)
+router.register(r'a6', GeeksViewSet6)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +33,9 @@ urlpatterns = [
     re_path('rest-auth/registration/account-confirm-email/(?P<key>.+)/',ConfirmEmailView.as_view(),         name='account_confirm_email'),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('accounts/', include('allauth.urls')),
+
+    path('levels/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls'))
+
 
 ]

@@ -61,3 +61,64 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_user_type(self):
         return self.email
+
+'''
+class A1(models.Model):
+    category = models.CharField(max_length=100, null=True)
+    text = models.TextField(blank=True, null=True)
+
+    REQUIRED_FIELDS = ['category', 'text']
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class A2(models.Model):
+    category = models.CharField(max_length=100, null=True)
+    text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class A3 (models.Model):
+    category = models.CharField(max_length=100)
+    text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class A4 (models.Model):
+    category = models.CharField(max_length=100)
+    text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class A5 (models.Model):
+    category = models.CharField(max_length=100)
+    text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class A6 (models.Model):
+    category = models.CharField(max_length=100)
+    text = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return '%s  %s' % (self.category, self.text)
+
+class Counter(models.Model):
+    language = models.CharField(max_length=100)
+    languagetwo = models.CharField(max_length=100)
+    email = models.EmailField(max_length=254, unique=True)
+    a1 = models.CharField(max_length=100)
+    a2 = models.CharField(max_length=100)
+    a3 = models.CharField(max_length=100)
+    a4 = models.CharField(max_length=100)
+    a5 = models.CharField(max_length=100)
+    a6 = models.CharField(max_length=100)
+
+    def __str__(self):
+        return '%s  %s %s  %s  %s  %s  %s  %s  %s ' % (self.language, self.languagetwo, self.email, self.a1, self.a2, self.a3, self.a4, self.a5, self.a6)
+
+'''
