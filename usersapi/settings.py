@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tf&tt$k9k$$%ha9%m#p#)bc+-1!q#c=$@08epk4z9a7315d$7m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'rest_auth.registration',
     'api',
     'users',
-    'panel'
+    'panel',
+    'counters'
 ]
 
 AUTH_USER_MODEL = 'users.User'
@@ -113,8 +114,6 @@ WSGI_APPLICATION = 'usersapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-
 
 ## postgresql
 DATABASES = {

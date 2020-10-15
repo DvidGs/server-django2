@@ -18,6 +18,7 @@ from django.urls import path, include, re_path
 from allauth.account.views import ConfirmEmailView
 from rest_framework import routers
 from panel.views import GeeksViewSet, GeeksViewSet2, GeeksViewSet3, GeeksViewSet4, GeeksViewSet5, GeeksViewSet6
+from counters.views import CounterViewSet
 
 router = routers.DefaultRouter()
 router.register(r'a1', GeeksViewSet)
@@ -27,6 +28,9 @@ router.register(r'a4', GeeksViewSet4)
 router.register(r'a5', GeeksViewSet5)
 router.register(r'a6', GeeksViewSet6)
 
+counter = routers.DefaultRouter()
+counter.register(r'counter', CounterViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/', include('rest_auth.urls')),
@@ -34,8 +38,11 @@ urlpatterns = [
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('accounts/', include('allauth.urls')),
 
+    path('counters/', include(counter.urls)),
+
     path('levels/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls'))
+
 
 
 ]
